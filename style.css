@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root{
+    --color-orange: rgb(251, 116, 19);
+    --color-white: rgb(255, 255, 255);
+    --color-light-grey: rgb(149, 158, 172);
+    /* --color-medium-grey: rgba(124, 135, 152, 0.5);buttony */
+    --color-medium-grey: rgb(38, 47, 56);/*buttony*/
+    --color-gradient-up-dark-blue: rgb(34, 41, 51); 
+    --color-gradient-down-dark-blue: rgb(23,30,40);
+    --color-very-dark-blue: rgb(18, 20, 23);/*tło */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;   
+    background: var(--color-very-dark-blue);
+    color: var(--color-light-grey);
+}
+
+p{
+    color: var(--color-light-grey);
+}
+
+h1{
+    color: var(--color-white);
+    width: 100%;     /*ABy przy flex-wrap:wrap nie przyklejał anm sie do niczego */
+}
+
+main{
+    width: 410px;
+    height: 410px;
+    padding: 0 30px;
+    background:  radial-gradient(
+        at top,
+        var(--color-gradient-up-dark-blue),
+        var(--color-gradient-down-dark-blue)
+    );
+    border-radius: 25px;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    background: var(--color-medium-grey);
+    border: none;
+    border-radius: 50%;
+}
+
+.rating__state{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rating__buttons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
+
+.rating__buttons-rate{
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-light-grey);
+    transition: background 0.3s, color 0.3s;
+}
+
+.rating__buttons-rate:is(:hover, :focus){
+    background: var(--color-orange);
+    color: var(--color-white);
+}
+
+
+.submit{
+    width: 100%;
+    background: var(--color-orange);
+    color: var(--color-white);
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: background 0.3s, color 0.3s;
+}
+
+.submit:is(:hover, :active, :focus) {
+    background: var(--color-white);
+    color: var(--color-orange);
+}
+
+.star{
+   display: grid;
+   place-items: center;
+}
+
+.thankyou__state{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+h2{
+    color: var(--color-white);
+    margin-bottom: 15px;
+}
+
+.your__opinion{
+    color: var(--color-orange);
+    width: auto;
+    height: auto;
+    padding: 7.5px 15px;
+    border-radius: 15px;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (max-width:376px){
+    main{
+        margin: auto 25px;
+        padding: 25px;
+        width: 330px;
+    }
+    button{
+        width:40px;
+        height: 40px;
+    }
+
+    .rating__buttons-rate,
+    .submit{
+        font-size: 1em;
+    }
+}
